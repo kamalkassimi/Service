@@ -1,6 +1,7 @@
 package com.example.service2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MyService.class);
-                startService(intent);
+              ContextCompat.startForegroundService(getBaseContext(),intent);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
@@ -29,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 stopService(intent);
             }
         });
+
     }
+
 }
